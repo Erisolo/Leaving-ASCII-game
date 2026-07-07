@@ -3,8 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://b8qngyaiw21iq" path="res://assets/suelo.jpeg" id="1_2c717"]
 [ext_resource type="Script" uid="uid://biwdsl8q6askk" path="res://scripts/playerController.gd" id="2_ly6xb"]
 [ext_resource type="Script" uid="uid://dqbmjmm8e1ypv" path="res://scripts/CameraMovement.gd" id="3_hewda"]
+[ext_resource type="Shader" uid="uid://dmngchnjf2hv2" path="res://shaders/ascii_shader.gdshader" id="4_47rga"]
+[ext_resource type="Texture2D" uid="uid://cr2bbtcftpojp" path="res://assets/edgesASCII.png" id="5_0vbqt"]
+[ext_resource type="Texture2D" uid="uid://cmm3418f6eofy" path="res://assets/fillASCII.png" id="5_yyxd1"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ly6xb"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yyxd1"]
 albedo_texture = ExtResource("1_2c717")
 
 [sub_resource type="BoxMesh" id="BoxMesh_hewda"]
@@ -70,6 +73,18 @@ _data = {
 &"Walk": SubResource("Animation_dfgsd")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hewda"]
+render_priority = 0
+shader = ExtResource("4_47rga")
+shader_parameter/_ascii_tex = ExtResource("5_yyxd1")
+shader_parameter/_ascii_edge_tex = ExtResource("5_0vbqt")
+shader_parameter/_char_size = 8.0
+shader_parameter/_char_count = 10.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_m8nr8"]
+flip_faces = true
+size = Vector2(2, 2)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0vbqt"]
 vertex_color_use_as_albedo = true
 albedo_color = Color(1, 1, 0.67058825, 1)
@@ -82,7 +97,7 @@ albedo_color = Color(1, 1, 0.67058825, 1)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=13251065]
 transform = Transform3D(9.363184, 0, 0, 0, 0.2382905, 0, 0, 0, 9.734151, 0.005413194, 0, 0.037007544)
-material_override = SubResource("StandardMaterial3D_ly6xb")
+material_override = SubResource("StandardMaterial3D_yyxd1")
 mesh = SubResource("BoxMesh_hewda")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1277541172]
@@ -115,6 +130,15 @@ fov = 105.15333
 libraries/ = SubResource("AnimationLibrary_m8nr8")
 script = ExtResource("3_hewda")
 player = NodePath("../..")
+
+[node name="PostProcessPasses" type="Node3D" parent="player/Camera3D" unique_id=692207879]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.85917425, -0.454827)
+metadata/_edit_group_ = true
+
+[node name="SS_PostProcess" type="MeshInstance3D" parent="player/Camera3D/PostProcessPasses" unique_id=1194059139]
+material_override = SubResource("ShaderMaterial_hewda")
+mesh = SubResource("QuadMesh_m8nr8")
+skeleton = NodePath("../../../..")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=565588425]
 transform = Transform3D(-1.7632617e-07, -0.51218474, 0, 4.0338726, -2.2388308e-08, 0, 0, 0, 9.1836195, -4.569195, 1.8424168, 0.03700754)
@@ -160,3 +184,12 @@ transform = Transform3D(1, 0, 0, 0, 1, -5.684342e-14, 0, 4.440892e-16, 1, 0, 0, 
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D6/RigidBody3D" unique_id=1865530541]
 shape = SubResource("BoxShape3D_m8nr8")
+
+[node name="Lights" type="Node3D" parent="." unique_id=1183542908]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.3161068, 0)
+metadata/_edit_group_ = true
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights" unique_id=2052276398]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6019747, 0)
+light_energy = 4.555
+omni_range = 8.803187

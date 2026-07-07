@@ -90,5 +90,5 @@ void fragment()
 	
 	// add color
 	vec3 col = tex * ascii;
-	ALBEDO = vec3(ascii);// col;
+	ALBEDO = vec3(col);// col;
 }
