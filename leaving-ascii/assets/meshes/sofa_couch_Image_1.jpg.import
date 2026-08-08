@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bf2e27eedlcie"
-path.s3tc="res://.godot/imported/fluorescent_light_fixtures_-_4x_4096px2_10.png-e13ca7084ec5721080d65806a990d88c.s3tc.ctex"
+uid="uid://co6sndb7qfbeb"
+path.s3tc="res://.godot/imported/sofa_couch_Image_1.jpg-1c9f9259f45491f8dbdbbcb0c92f8f02.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "07dc60eda7650a247ae4cfd4fbc77de9"
+"md5": "e98b641b96743472d0636f85ef620c8f"
 }
 
 [deps]
 
-source_file="res://assets/meshes/fluorescent_light_fixtures_-_4x_4096px2_10.png"
-dest_files=["res://.godot/imported/fluorescent_light_fixtures_-_4x_4096px2_10.png-e13ca7084ec5721080d65806a990d88c.s3tc.ctex"]
+source_file="res://assets/meshes/sofa_couch_Image_1.jpg"
+dest_files=["res://.godot/imported/sofa_couch_Image_1.jpg-1c9f9259f45491f8dbdbbcb0c92f8f02.s3tc.ctex"]
 
 [params]
 

@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cendsux344ta2"
-path.s3tc="res://.godot/imported/fluorescent_light_fixtures_-_4x_4096px2_4.png-0e4c7c9f7ebf43e6ab93e4ede80da599.s3tc.ctex"
+uid="uid://c83x22w4kyvnd"
+path.s3tc="res://.godot/imported/psx_wooden_table_Image_0.png-a2d9d1ba581f829c888dc9e0e7e31994.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "130df67dcea1a1f8731157f42628c710"
+"md5": "d754ef3956d49067544f3bfdaa4e9698"
 }
 
 [deps]
 
-source_file="res://assets/meshes/fluorescent_light_fixtures_-_4x_4096px2_4.png"
-dest_files=["res://.godot/imported/fluorescent_light_fixtures_-_4x_4096px2_4.png-0e4c7c9f7ebf43e6ab93e4ede80da599.s3tc.ctex"]
+source_file="res://assets/meshes/psx_wooden_table_Image_0.png"
+dest_files=["res://.godot/imported/psx_wooden_table_Image_0.png-a2d9d1ba581f829c888dc9e0e7e31994.s3tc.ctex"]
 
 [params]
 
