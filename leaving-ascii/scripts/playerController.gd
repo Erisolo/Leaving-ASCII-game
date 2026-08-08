@@ -23,7 +23,7 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		look_dir = event.relative * 0.001
-		if mouse_captured: _rotate_camera()
+		if mouse_captured: _rotate_camera_from_mouse()
 	if Input.is_action_just_pressed("esc"): 
 		if mouse_captured: release_mouse()
 		else: capture_mouse()
@@ -33,7 +33,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func capture_mouse() -> void:
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED_HIDDEN)
 	mouse_captured = true
 
 func release_mouse() -> void:
@@ -43,6 +43,26 @@ func release_mouse() -> void:
 func _rotate_camera(sens_mod: float = 1.0) -> void:
 	camera.rotation.y -= look_dir.x * camera_sens * sens_mod
 	camera.rotation.x = clamp(camera.rotation.x - look_dir.y * camera_sens * sens_mod, -1.5, 1.5)
+
+func _rotate_camera_from_mouse() -> void:
+	var viewport_size := get_viewport().get_visible_rect().size
+	var center := viewport_size / 2.0
+	var mouse_pos := get_viewport().get_mouse_position()
+
+	var offset := mouse_pos - center
+
+	# Don't rotate if the mouse is basically centered.
+	if offset.length() < 1.0:
+		return
+
+	var sensitivity := camera_sens * 0.002
+
+	camera.rotation.y -= offset.x * sensitivity
+	camera.rotation.x -= offset.y * sensitivity
+	camera.rotation.x = clamp(camera.rotation.x, -1.5, 1.5)
+
+	# Put the cursor back in the center.
+	Input.warp_mouse(center)
 
 func _walk(delta: float) -> Vector3:
 	move_dir = Input.get_vector(&"move_left", &"move_right", &"move_forward", &"move_backwards")
