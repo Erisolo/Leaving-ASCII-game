@@ -1,11 +1,12 @@
 [gd_scene format=4 uid="uid://cu65vp0ap650u"]
 
-[ext_resource type="Texture2D" uid="uid://b8qngyaiw21iq" path="res://assets/suelo.jpeg" id="1_2c717"]
+[ext_resource type="Texture2D" uid="uid://6wrlj7jb2t5s" path="res://assets/azulejos.jpg" id="1_iypob"]
 [ext_resource type="Script" uid="uid://biwdsl8q6askk" path="res://scripts/playerController.gd" id="2_ly6xb"]
 [ext_resource type="Texture2D" uid="uid://dxokqb34ae281" path="res://assets/pizarra.png" id="2_uu6ay"]
 [ext_resource type="Texture2D" uid="uid://b3ch3t4f40xgp" path="res://assets/corcho2.png" id="3_4djc3"]
 [ext_resource type="Script" uid="uid://dqbmjmm8e1ypv" path="res://scripts/CameraMovement.gd" id="3_hewda"]
 [ext_resource type="Texture2D" uid="uid://y34kxgrtqd7o" path="res://assets/corcho1.png" id="4_v2gni"]
+[ext_resource type="Texture2D" uid="uid://43ifinvyowdp" path="res://assets/catan.png" id="5_iypob"]
 [ext_resource type="Texture2D" uid="uid://cmm3418f6eofy" path="res://assets/fillASCII.png" id="5_yyxd1"]
 [ext_resource type="Script" uid="uid://bv37w8gorejas" path="res://scripts/hihgligh_on_hover.gd" id="7_v2gni"]
 [ext_resource type="Texture2D" uid="uid://kut08v53pnft" path="res://assets/meshes/sofa_couch_Image_0.jpg" id="8_4djc3"]
@@ -13,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://co6sndb7qfbeb" path="res://assets/meshes/sofa_couch_Image_1.jpg" id="9_v2gni"]
 [ext_resource type="PackedScene" uid="uid://bynibko5hx5ee" path="res://Scenes/prefab/chair.tscn" id="13_so5kr"]
 [ext_resource type="PackedScene" uid="uid://drc0048gllvtn" path="res://assets/meshes/gray_office_chair.glb" id="14_0bgj2"]
+[ext_resource type="Resource" uid="uid://cy5jyy6u0rkc4" path="res://dialogues/desk_dialogue.dialogue" id="14_5bsxs"]
 [ext_resource type="PackedScene" uid="uid://dwo27u8gv7un2" path="res://assets/meshes/door_with_frame.glb" id="15_oy1pr"]
 [ext_resource type="Material" uid="uid://bwhutjimtuymk" path="res://shaders/outline.tres" id="16_iypob"]
 [ext_resource type="Texture2D" uid="uid://dllbeu8yf8m3s" path="res://assets/meshes/psx_wooden_table_0.png" id="17_ekaqe"]
@@ -28,13 +30,14 @@ size = Vector3(1, 23, 28)
 size = Vector3(1, 27, 17)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0bgj2"]
-albedo_texture = ExtResource("1_2c717")
+albedo_color = Color(0.7683069, 0.7683071, 0.76830703, 1)
+albedo_texture = ExtResource("1_iypob")
+uv1_scale = Vector3(6, 6, 6)
 
 [sub_resource type="BoxMesh" id="BoxMesh_oy1pr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iypob"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 0.67058825, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_oi7nq"]
 
@@ -65,6 +68,12 @@ albedo_texture = ExtResource("4_v2gni")
 material = SubResource("StandardMaterial3D_oi7nq")
 
 [sub_resource type="BoxMesh" id="BoxMesh_ekaqe"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mrjo7"]
+albedo_texture = ExtResource("5_iypob")
+uv1_scale = Vector3(3, 2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_eol8w"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5bsxs"]
 albedo_color = Color(0.17785347, 0.17785347, 0.17785347, 1)
@@ -412,9 +421,9 @@ shadow_mesh = SubResource("ArrayMesh_m3tow")
 
 [sub_resource type="Environment" id="Environment_oy1pr"]
 ambient_light_source = 3
-ambient_light_color = Color(0.92941177, 0.972549, 0.65882355, 1)
-ambient_light_sky_contribution = 0.94
-ambient_light_energy = 6.08
+ambient_light_color = Color(0.9479311, 0.9778275, 0.7838906, 1)
+ambient_light_sky_contribution = 0.9
+ambient_light_energy = 6.41
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l42ic"]
 albedo_texture = ExtResource("21_oi7nq")
@@ -515,6 +524,43 @@ mesh = SubResource("BoxMesh_ekaqe")
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="shelves" unique_id=1389697333]
 transform = Transform3D(3.36, 0, 0, 0, 0.24000001, 0, 0, 0, 13.747966, -12, 11.466667, 4)
 mesh = SubResource("BoxMesh_ekaqe")
+
+[node name="games" type="Node3D" parent="shelves" unique_id=181739378]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="shelves/games" unique_id=741597718]
+transform = Transform3D(1.8, 0, 0, 0, 0.8, 0, 0, 0, 3.2, -12, 9.5, 4)
+material_override = SubResource("StandardMaterial3D_mrjo7")
+mesh = SubResource("BoxMesh_eol8w")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="shelves/games" unique_id=825597805]
+transform = Transform3D(1.8, 0, 0, 0, 0.8, 0, 0, 0, 3.2, -12, 9.5, 0)
+material_override = SubResource("StandardMaterial3D_mrjo7")
+mesh = SubResource("BoxMesh_eol8w")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="shelves/games" unique_id=582782286]
+transform = Transform3D(1.8, 0, 0, 0, 0.8, 0, 0, 0, 3.2, -12, 10.5, 2)
+material_override = SubResource("StandardMaterial3D_mrjo7")
+mesh = SubResource("BoxMesh_eol8w")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="shelves/games" unique_id=730522063]
+transform = Transform3D(1.8, 0, 0, 0, 0.8, 0, 0, 0, 3.2, -12, 8, 6)
+material_override = SubResource("StandardMaterial3D_mrjo7")
+mesh = SubResource("BoxMesh_eol8w")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="shelves/games" unique_id=1231860229]
+transform = Transform3D(1.8, 0, 0, 0, 0.8, 0, 0, 0, 3.2, -12, 8, 1)
+material_override = SubResource("StandardMaterial3D_mrjo7")
+mesh = SubResource("BoxMesh_eol8w")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="shelves/games" unique_id=734796714]
+transform = Transform3D(1.8, 0, 0, 0, 0.8, 0, 0, 0, 3.2, -12, 12, 6)
+material_override = SubResource("StandardMaterial3D_mrjo7")
+mesh = SubResource("BoxMesh_eol8w")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="shelves/games" unique_id=878450673]
+transform = Transform3D(1.8, 0, 0, 0, 0.8, 0, 0, 0, 3.2, -12, 9.5, -4)
+material_override = SubResource("StandardMaterial3D_mrjo7")
+mesh = SubResource("BoxMesh_eol8w")
 
 [node name="squareShelves" type="Node3D" parent="." unique_id=2041137171]
 
@@ -652,7 +698,7 @@ mesh = SubResource("ArrayMesh_l42ic")
 [node name="OmniLight3D" type="OmniLight3D" parent="Lights" unique_id=13280132]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -0.146)
 light_color = Color(0.9968732, 0.9999998, 0.8875603, 1)
-light_energy = 3.682
+light_energy = 1.459
 light_indirect_energy = 1.952
 light_volumetric_fog_energy = 2.726
 light_size = 0.31
@@ -705,6 +751,7 @@ script = ExtResource("7_v2gni")
 mesh = NodePath("table")
 material = ExtResource("16_iypob")
 body = NodePath("../StaticBody3D")
+dialogue = ExtResource("14_5bsxs")
 
 [node name="table" type="MeshInstance3D" parent="chairs/table2" unique_id=1194822907]
 transform = Transform3D(-2.7477884e-07, -4.8821454, -7.9540246e-07, 0, -6.045464e-07, 3.7106793, -6.286206, 2.1340533e-07, 3.476814e-14, 3.5382977, -2.091441, -3.1787233)

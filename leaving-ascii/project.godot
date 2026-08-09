@@ -57,7 +57,7 @@ esc={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogues/couch_dialogue.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogues/couch_dialogue.dialogue", "res://dialogues/desk_dialogue.dialogue")
 
 [physics]
 
