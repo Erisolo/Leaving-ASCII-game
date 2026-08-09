@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cmm3418f6eofy" path="res://assets/fillASCII.png" id="5_yyxd1"]
 [ext_resource type="Script" uid="uid://bv37w8gorejas" path="res://scripts/hihgligh_on_hover.gd" id="7_v2gni"]
 [ext_resource type="Texture2D" uid="uid://kut08v53pnft" path="res://assets/meshes/sofa_couch_Image_0.jpg" id="8_4djc3"]
+[ext_resource type="Resource" uid="uid://51qgdjr1j0ns" path="res://dialogues/couch_dialogue.dialogue" id="9_ekaqe"]
 [ext_resource type="Texture2D" uid="uid://co6sndb7qfbeb" path="res://assets/meshes/sofa_couch_Image_1.jpg" id="9_v2gni"]
 [ext_resource type="PackedScene" uid="uid://bynibko5hx5ee" path="res://Scenes/prefab/chair.tscn" id="13_so5kr"]
 [ext_resource type="PackedScene" uid="uid://drc0048gllvtn" path="res://assets/meshes/gray_office_chair.glb" id="14_0bgj2"]
@@ -599,6 +600,7 @@ script = ExtResource("7_v2gni")
 mesh = NodePath("couch")
 material = ExtResource("16_iypob")
 body = NodePath("StaticBody3D")
+dialogue = ExtResource("9_ekaqe")
 
 [node name="couch" type="MeshInstance3D" parent="couch" unique_id=843310267]
 transform = Transform3D(0.99999994, 0, 2.1175824e-22, 0, 0.99999994, 8.351871e-23, 0, 8.351872e-23, 0.99999994, -45.293674, -28.13697, 0)
@@ -616,7 +618,6 @@ shape = SubResource("BoxShape3D_v2gni")
 
 [node name="Lights" type="Node3D" parent="." unique_id=1130837823]
 transform = Transform3D(2.8500001, 0, 0, 0, 2.8500001, 0, 0, 0, 2.6646812, -1.1271223, 11.32512, -0.36351416)
-metadata/_edit_group_ = true
 
 [node name="Fluorescent Lamp 01_Fluorescent Lamp 01_0" type="MeshInstance3D" parent="Lights" unique_id=51141663]
 transform = Transform3D(0.5578123, 0, 0, 0, -9.0879155e-08, 1.8593761, 0, -0.59660614, -3.239985e-07, -2.879736, 1.170157, -3.741578)
@@ -753,6 +754,3 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
-
-[connection signal="mouse_entered" from="couch/StaticBody3D" to="couch" method="_on_static_body_3d_mouse_entered"]
-[connection signal="mouse_exited" from="couch/StaticBody3D" to="couch" method="_on_static_body_3d_mouse_exited"]

@@ -137,6 +137,7 @@ func _type_next(delta: float, seconds_needed: float) -> void:
 		_last_mutation_index = visible_characters
 		_mutate_inline_mutations(visible_characters)
 		if _is_awaiting_mutation: return
+		
 
 	# Pause on characters like "."
 	var waiting_seconds: float = seconds_per_pause_step if _should_auto_pause() else 0
@@ -153,6 +154,8 @@ func _type_next(delta: float, seconds_needed: float) -> void:
 			_waiting_seconds += seconds_needed
 		else:
 			_type_next(delta, seconds_needed)
+			
+	
 
 
 # Get the speed for the current typing position

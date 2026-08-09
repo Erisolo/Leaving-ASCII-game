@@ -212,6 +212,9 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 
 func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 	next(response.next_id)
-
-
 #endregion
+
+func _on_dialogue_label_spoke(letter: String, letter_index: int, speed: float) -> void:
+	if not letter in [" ",  "." , "," , "!" , "¡" ,"?", "¿", "v"]: 
+		%AudioStreamPlayer.pitch_scale = randf_range(0.3, 0.9);
+		%AudioStreamPlayer.play();

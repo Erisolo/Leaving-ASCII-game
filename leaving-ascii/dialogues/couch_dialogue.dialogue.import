@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://51qgdjr1j0ns"
+path="res://.godot/imported/couch_dialogue.dialogue-5c6178db94861f20a1cb182137a6a13d.tres"
+
+[deps]
+
+source_file="res://dialogues/couch_dialogue.dialogue"
+dest_files=["res://.godot/imported/couch_dialogue.dialogue-5c6178db94861f20a1cb182137a6a13d.tres"]
+
+[params]
+
+defaults=true
