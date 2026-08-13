@@ -15,10 +15,16 @@ var look_dir: Vector2 # Input direction for look/aim
 var walk_vel: Vector3 # Walking velocity 
 var grav_vel: Vector3 # Gravity velocity 
 
+var can_move: bool = true
+
 @export var camera: Camera3D
 
 func _ready() -> void:
+	DialogueManager.dialogue_started.connect(stop_movement)
+	DialogueManager.dialogue_ended.connect(resume_movement)
+	
 	capture_mouse()
+	
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -29,8 +35,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		else: capture_mouse()
 
 func _physics_process(delta: float) -> void:
-	velocity = _walk(delta)
-	move_and_slide()
+	if can_move:
+		velocity = _walk(delta)
+		move_and_slide()
 
 func capture_mouse() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED_HIDDEN)
@@ -70,3 +77,12 @@ func _walk(delta: float) -> Vector3:
 	var walk_dir: Vector3 = Vector3(_forward.x, 0, _forward.z).normalized()
 	walk_vel = walk_vel.move_toward(walk_dir * speed * move_dir.length(), acceleration * delta)
 	return walk_vel
+	
+func stop_movement(dialogue) -> void:
+	can_move = false
+	
+func resume_movement(dialogue) -> void:
+	can_move = true
+	 
+	var center := get_viewport().get_visible_rect().size / 2.0
+	Input.warp_mouse(center)
