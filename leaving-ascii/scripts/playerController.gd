@@ -35,9 +35,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		else: capture_mouse()
 
 func _physics_process(delta: float) -> void:
-	if can_move:
-		velocity = _walk(delta)
-		move_and_slide()
+	velocity = _walk(delta)
+	move_and_slide()
 
 func capture_mouse() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED_HIDDEN)
@@ -72,7 +71,9 @@ func _rotate_camera_from_mouse() -> void:
 	Input.warp_mouse(center)
 
 func _walk(delta: float) -> Vector3:
-	move_dir = Input.get_vector(&"move_left", &"move_right", &"move_forward", &"move_backwards")
+	move_dir = Vector2(0,0)
+	if can_move:
+		move_dir = Input.get_vector(&"move_left", &"move_right", &"move_forward", &"move_backwards")
 	var _forward: Vector3 = camera.global_transform.basis * Vector3(move_dir.x, 0, move_dir.y)
 	var walk_dir: Vector3 = Vector3(_forward.x, 0, _forward.z).normalized()
 	walk_vel = walk_vel.move_toward(walk_dir * speed * move_dir.length(), acceleration * delta)
