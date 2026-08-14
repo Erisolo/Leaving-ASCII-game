@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bvmgssok087nh"]
+
+[ext_resource type="Shader" uid="uid://c6ujhmg85x23q" path="res://shaders/movableHighlight.gdshader" id="1_qv3es"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_qv3es")
+shader_parameter/shine_color = Color(0, 1, 0, 1)
+shader_parameter/shine_speed = 5.930000281675
+shader_parameter/shine_width = 1.28400006099
+shader_parameter/cycle_interval = 7.422000352545
+shader_parameter/angle_fade = 0.8590000408025
+shader_parameter/x_direction = 0.0
+shader_parameter/y_direction = 0.0
+shader_parameter/z_direction = 1.0

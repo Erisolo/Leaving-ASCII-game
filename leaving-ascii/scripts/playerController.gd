@@ -79,10 +79,10 @@ func _walk(delta: float) -> Vector3:
 	walk_vel = walk_vel.move_toward(walk_dir * speed * move_dir.length(), acceleration * delta)
 	return walk_vel
 	
-func stop_movement(dialogue) -> void:
+func stop_movement(_dialogue) -> void:
 	can_move = false
 	
-func resume_movement(dialogue) -> void:
+func resume_movement(_dialogue) -> void:
 	can_move = true
 	 
 	var center := get_viewport().get_visible_rect().size / 2.0
