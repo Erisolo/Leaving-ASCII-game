@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cvntlo3xycd2d"
+path="res://.godot/imported/shirt.dialogue-499228ac1c3c7d00963c75036425bc64.tres"
+
+[deps]
+
+source_file="res://dialogues/shirt.dialogue"
+dest_files=["res://.godot/imported/shirt.dialogue-499228ac1c3c7d00963c75036425bc64.tres"]
+
+[params]
+
+defaults=true

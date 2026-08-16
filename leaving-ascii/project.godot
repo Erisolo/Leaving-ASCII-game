@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 DialogueManager="*uid://c3rodes2l3gxb"
+Events="*uid://c1euu5vu4ub0v"
 
 [editor_plugins]
 
@@ -57,7 +58,7 @@ esc={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogues/couch_dialogue.dialogue", "res://dialogues/desk_dialogue.dialogue", "res://dialogues/door.dialogue", "res://dialogues/starting_dialogue.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogues/couch_dialogue.dialogue", "res://dialogues/desk_dialogue.dialogue", "res://dialogues/door.dialogue", "res://dialogues/starting_dialogue.dialogue", "res://dialogues/shirt.dialogue", "res://dialogues/notebook.dialogue")
 
 [physics]
 

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cr2clh06i6dc7"
+path="res://.godot/imported/notebook.dialogue-cbfd2d22877db6a2aec665857dd001d8.tres"
+
+[deps]
+
+source_file="res://dialogues/notebook.dialogue"
+dest_files=["res://.godot/imported/notebook.dialogue-cbfd2d22877db6a2aec665857dd001d8.tres"]
+
+[params]
+
+defaults=true
