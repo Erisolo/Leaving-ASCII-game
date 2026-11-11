@@ -3,7 +3,7 @@
 [ext_resource type="Shader" uid="uid://c8kpbn44gq30j" path="res://shaders/outline.gdshader" id="1_a2dft"]
 
 [resource]
-render_priority = 0
+render_priority = 2
 shader = ExtResource("1_a2dft")
 shader_parameter/outline_color = Color(1, 1, 1, 1)
-shader_parameter/outline_width = 8.0
+shader_parameter/outline_width = 40.0

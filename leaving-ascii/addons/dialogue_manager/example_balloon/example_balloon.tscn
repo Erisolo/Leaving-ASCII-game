@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d1wt4ma6055l8" path="res://addons/dialogue_manager/example_balloon/example_balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
+[ext_resource type="FontFile" uid="uid://dwswelid47uye" path="res://assets/fonts/Qabaxel.ttf" id="2_kmygl"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
 [ext_resource type="FontFile" uid="uid://d4ng71l3de353" path="res://assets/fonts/deer-diary.ttf" id="3_nlsx6"]
 [ext_resource type="AudioStream" uid="uid://dg4j80r55tep" path="res://assets/sounds/typing.wav" id="5_1337t"]
@@ -65,6 +66,10 @@ MarginContainer/constants/margin_right = 30
 MarginContainer/constants/margin_top = 15
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_qkmqt")
 
+[sub_resource type="Theme" id="Theme_r5ei8"]
+default_font = ExtResource("2_kmygl")
+default_font_size = 39
+
 [sub_resource type="Theme" id="Theme_1337t"]
 default_font = ExtResource("3_nlsx6")
 
@@ -122,6 +127,7 @@ grow_vertical = 2
 theme = SubResource("Theme_qq3yp")
 
 [node name="MarginContainer" type="MarginContainer" parent="Balloon" unique_id=1011109179]
+modulate = Color(1, 1, 1, 0.9764706)
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -132,6 +138,7 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="PanelContainer" type="PanelContainer" parent="Balloon/MarginContainer" unique_id=810051587]
+self_modulate = Color(0.74809974, 0.7480996, 0.74809974, 1)
 clip_children = 2
 layout_mode = 2
 mouse_filter = 1
@@ -148,9 +155,10 @@ size_flags_horizontal = 3
 
 [node name="CharacterLabel" type="RichTextLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=507199029]
 unique_name_in_owner = true
-modulate = Color(1, 1, 1, 0.501961)
+modulate = Color(1, 1, 1, 0.9137255)
 layout_mode = 2
 mouse_filter = 1
+theme = SubResource("Theme_r5ei8")
 bbcode_enabled = true
 text = "Character"
 fit_content = true
@@ -158,9 +166,11 @@ scroll_active = false
 
 [node name="DialogueLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1225160028 instance=ExtResource("2_a8ve6")]
 unique_name_in_owner = true
+self_modulate = Color(0.63866097, 0.638661, 0.63866097, 1)
 layout_mode = 2
 size_flags_vertical = 3
 theme = SubResource("Theme_1337t")
+theme_override_font_sizes/normal_font_size = 23
 text = "Dialogue..."
 
 [node name="Control" type="Control" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1162966119]
@@ -170,6 +180,7 @@ size_flags_vertical = 8
 
 [node name="Progress" type="Polygon2D" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Control" unique_id=821575988]
 unique_name_in_owner = true
+self_modulate = Color(0.45490196, 0.45490196, 0.45490196, 1)
 polygon = PackedVector2Array(0, 0, 10, 10, 20, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Control" unique_id=452325722]

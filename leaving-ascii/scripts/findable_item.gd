@@ -20,7 +20,7 @@ func find_object(_camera, event, _position, _normal, _shape_idx) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed and !event.is_echo():
 			if !found:
-				mesh.material_override = null
+				mesh.material_override.next_pass = null
 				found = true
 				Events.objectFound.emit(self, dialogue)
 			

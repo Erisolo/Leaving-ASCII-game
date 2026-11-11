@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://ddvpljkcn1lqy"
+path="res://.godot/imported/boardgame_dialogue.dialogue-81753db82ace1d3fe18cafda952b45df.tres"
+
+[deps]
+
+source_file="res://dialogues/boardgame_dialogue.dialogue"
+dest_files=["res://.godot/imported/boardgame_dialogue.dialogue-81753db82ace1d3fe18cafda952b45df.tres"]
+
+[params]
+
+defaults=true
