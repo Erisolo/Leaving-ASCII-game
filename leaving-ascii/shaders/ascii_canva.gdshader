@@ -26,7 +26,7 @@ void fragment()
 	vec3 tex = texture(_screen, screen_uv).rgb;
 
 	// Brightness -> character index.
-	float luminosity = get_luminosity(tex);
+	float luminosity = get_luminosity(tex) + 0.3;
 
 	float char_index = floor(
 		luminosity * _char_count

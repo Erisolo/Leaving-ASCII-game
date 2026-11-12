@@ -446,6 +446,8 @@ shadow_mesh = SubResource("ArrayMesh_m3tow")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a520j"]
 transparency = 1
+cull_mode = 2
+shading_mode = 0
 albedo_texture = ExtResource("19_a32h5")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_kdpd1"]
@@ -454,7 +456,7 @@ albedo_texture = ExtResource("19_a32h5")
 data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
 
 [sub_resource type="Environment" id="Environment_oy1pr"]
-ambient_light_source = 3
+ambient_light_source = 1
 ambient_light_color = Color(0.9479311, 0.9778275, 0.7838906, 1)
 ambient_light_sky_contribution = 0.9
 ambient_light_energy = 7.67
@@ -1032,42 +1034,47 @@ mesh = SubResource("ArrayMesh_iypob")
 transform = Transform3D(2.8500001, 0, 0, 0, 2.8500001, 0, 0, 0, 2.6646812, -1.1271223, 11.32512, -0.36351416)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Lights" unique_id=13280132]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.16156346, 0.818671, 0.13641933)
-light_color = Color(0.9968732, 0.9999998, 0.8875603, 1)
-light_energy = 2.284
-light_indirect_energy = 1.952
-light_volumetric_fog_energy = 2.726
-light_size = 0.31
-light_specular = 16.0
-omni_range = 55.0
+transform = Transform3D(0.116959065, 0, 0, 0, -5.467995e-09, -0.116959065, 0, 0.12509313, -5.8482734e-09, 0.16156347, 1.841183, 0.13641928)
+light_color = Color(1.6608336, 1.6608336, 1.3674469, 1)
+light_energy = 11.775
+light_specular = 1.0
+shadow_enabled = true
+shadow_opacity = 0.47
+omni_range = 415.254
 
 [node name="Fluorescent Lamp 01_Fluorescent Lamp 01_0" type="MeshInstance3D" parent="Lights" unique_id=51141663]
 transform = Transform3D(0.5578123, 0, 0, 0, -9.0879155e-08, 1.8593761, 0, -0.59660614, -3.239985e-07, -2.879736, 1.170157, -3.741578)
+visible = false
 material_override = SubResource("StandardMaterial3D_v2gni")
 mesh = SubResource("ArrayMesh_l42ic")
 
 [node name="Fluorescent Lamp 01_Fluorescent Lamp 01_1" type="MeshInstance3D" parent="Lights" unique_id=666822647]
 transform = Transform3D(0.5578123, 0, 0, 0, -9.0879155e-08, 1.8593761, 0, -0.59660614, -3.239985e-07, 2.777248, 1.170157, -3.7105668)
+visible = false
 material_override = SubResource("StandardMaterial3D_v2gni")
 mesh = SubResource("ArrayMesh_l42ic")
 
 [node name="Fluorescent Lamp 01_Fluorescent Lamp 01_2" type="MeshInstance3D" parent="Lights" unique_id=2061719247]
 transform = Transform3D(0.5578123, 0, 0, 0, -9.0879155e-08, 1.8593761, 0, -0.59660614, -3.239985e-07, 2.8062396, 1.170157, -0.003146187)
+visible = false
 material_override = SubResource("StandardMaterial3D_v2gni")
 mesh = SubResource("ArrayMesh_l42ic")
 
 [node name="Fluorescent Lamp 01_Fluorescent Lamp 01_3" type="MeshInstance3D" parent="Lights" unique_id=190042571]
 transform = Transform3D(0.5578123, 0, 0, 0, -9.0879155e-08, 1.8593761, 0, -0.59660614, -3.239985e-07, -2.9383688, 1.170157, 0.120897934)
+visible = false
 material_override = SubResource("StandardMaterial3D_v2gni")
 mesh = SubResource("ArrayMesh_l42ic")
 
 [node name="Fluorescent Lamp 01_Fluorescent Lamp 01_4" type="MeshInstance3D" parent="Lights" unique_id=841753313]
 transform = Transform3D(0.5578123, 0, 0, 0, -9.0879155e-08, 1.8593761, 0, -0.59660614, -3.239985e-07, -2.9383688, 1.170157, 3.6251416)
+visible = false
 material_override = SubResource("StandardMaterial3D_v2gni")
 mesh = SubResource("ArrayMesh_l42ic")
 
 [node name="Fluorescent Lamp 01_Fluorescent Lamp 01_5" type="MeshInstance3D" parent="Lights" unique_id=1507328502]
 transform = Transform3D(0.5578123, 0, 0, 0, -9.0879155e-08, 1.8593761, 0, -0.59660614, -3.239985e-07, 2.8315458, 1.170157, 3.6251416)
+visible = false
 material_override = SubResource("StandardMaterial3D_v2gni")
 mesh = SubResource("ArrayMesh_l42ic")
 
